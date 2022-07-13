@@ -1,8 +1,34 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import React from "react";
+import type { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+// Redux imports
+import { Provider } from "react-redux";
+import store from "../store/store";
 
-export default MyApp
+// MUI (emotion) imports
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import createEmotionCache from "../utils/createEmotionCache";
+import lightTheme from "../styles/theme/lightTheme";
+import "../styles/globals.css";
+
+const clientSideEmotionCache = createEmotionCache();
+
+const MyApp = (
+  props: AppProps & { emotionCache?: EmotionCache | undefined }
+) => {
+  const { Component, pageProps, emotionCache = clientSideEmotionCache } = props;
+
+  return (
+    <CacheProvider value={emotionCache}>
+      <ThemeProvider theme={lightTheme}>
+        <CssBaseline />
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
+      </ThemeProvider>
+    </CacheProvider>
+  );
+};
+
+export default MyApp;
