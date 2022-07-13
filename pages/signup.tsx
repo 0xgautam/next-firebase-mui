@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { NextPage } from "next";
-import SignupForm from "@components/signup/SignupForm";
+import SignupForm from "@components/auth/SignupForm";
 
 const SignUp: NextPage = () => {
   return (
