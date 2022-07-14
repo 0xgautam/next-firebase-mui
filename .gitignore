@@ -16,7 +16,7 @@
 /build
 
 #firebase
-.firebaserc
+/.firebaserc/
 /.firebase/
 
 # misc
