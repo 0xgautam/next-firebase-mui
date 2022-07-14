@@ -10,7 +10,23 @@ The NextJs Firebase Starter Kit
 | components | Components folder for you app ( sample auth components are created. import anywhere using '@components' alias )            |
 | firebase   | Contains firebase cloud function in function.js file. index.ts is where we initialize and export various firebase services |
 
+Create `.env` file and copy `.env.template` 's content.
+
+Create a firebase project and paste the corresponding project config variables in the `.env` file
+
+## NOTE
+
+Make sure you upgrage to Firebase Blaze plan to use cloud functions.
+
 Currently the app is using light-theme. You can comment out `lightTheme` import in the `pages/_app.tsx` and instead import the `darkTheme`. Make sure you provide the same to the `<ThemeProvier />`
+
+Install all the dependencies:
+
+```bash
+npm install
+#or
+yarn install
+```
 
 Now, run the development server:
 
