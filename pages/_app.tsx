@@ -9,8 +9,8 @@ import store from "../store/store";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import createEmotionCache from "../utils/createEmotionCache";
-// import lightTheme from "../styles/theme/lightTheme";
-import darkTheme from "../styles/theme/darkTheme";
+import lightTheme from "../styles/theme/lightTheme";
+// import darkTheme from "../styles/theme/darkTheme";
 import "../styles/globals.css";
 
 const clientSideEmotionCache = createEmotionCache();
@@ -22,7 +22,7 @@ const MyApp = (
 
   return (
     <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={lightTheme}>
         <CssBaseline />
         <Provider store={store}>
           <Component {...pageProps} />
